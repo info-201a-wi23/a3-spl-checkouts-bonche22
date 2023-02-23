@@ -26,6 +26,6 @@ book_data <- book_data %>%
   group_by(Title, year) %>%
   summarise(total_checkouts = sum(checkouts))
 
-ggplot(book_data, aes(x = year, y = total_checkouts)) +
+bar_chart <- ggplot(book_data, aes(x = year, y = total_checkouts)) +
   geom_bar(stat = "identity", aes(fill = Title)) +
   labs(title = "Ernest Hemingway's Book Checkouts by Year", x = "Year", y = "Amount of Checkouts")

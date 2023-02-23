@@ -21,7 +21,7 @@ book_data <- book_data %>%
   mutate(Title = gsub("III .*","", summarise_title2))
 
 
-ggplot(data = book_data, aes(x = year, y = checkouts, color = Title)) +
+line_chart <- ggplot(data = book_data, aes(x = year, y = checkouts, color = Title)) +
   labs(title = "The Short Stories Checkouts by Year since 2012", x = "Year", y = "Amount of Checkouts") +
   geom_line() +
   geom_point()

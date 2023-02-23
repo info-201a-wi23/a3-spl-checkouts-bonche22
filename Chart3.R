@@ -16,7 +16,7 @@ total_checkouts = sum(book_data$checkouts, na.rm = TRUE)
 book_data <- book_data %>%
   mutate(percentage_checkouts = (checkouts / total_checkouts))
 
-ggplot(data = book_data, aes(x = "", y = percentage_checkouts, fill = type)) +
+pie_chart <- ggplot(data = book_data, aes(x = "", y = percentage_checkouts, fill = type)) +
   labs(title = "Ernest Hemingway's Book Checkouts Percentage by Material Type", fill = "Material Type") +
   geom_col(color = "black") +
   coord_polar(theta = "y") +
