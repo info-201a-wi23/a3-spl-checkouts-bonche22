@@ -1,5 +1,5 @@
 ---
-title: "A3: SPL Library Checkouts"
+title: 'A3: SPL Library Checkouts'
 output: html_document
 ---
 
@@ -45,9 +45,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-```{r, echo = FALSE, warning = FALSE, code = readLines("Chart1.R"), message = FALSE}
-library(knitr)
-library("ggplot2")
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 source("Chart1.R")
 line_chart
 ```
