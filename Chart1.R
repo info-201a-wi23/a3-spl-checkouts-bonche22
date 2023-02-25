@@ -1,4 +1,3 @@
-install.packages("tidyverse")
 library("ggplot2")
 library("dplyr")
 library("scales")
@@ -8,18 +7,26 @@ library("scales")
 np_data <- read.csv("~/Desktop/The_Short_Stories.csv", stringsAsFactors = FALSE)
 
 book_data <- np_data %>%
-  group_by(year = CheckoutYear, title = Title) %>%
-  summarise(checkouts = sum(Checkouts))
+  select(year = CheckoutYear, title = Title,checkouts = Checkouts)
 
 book_data <- book_data %>%
-  mutate(summarise_title = gsub("  ","", title))
+  mutate(summarise_title = gsub("\\(.*","", title))
 
 book_data <- book_data %>%
-  mutate(summarise_title2 = gsub("\\(.*","", summarise_title))
+  mutate(summarise_title2 = gsub("III ","III", summarise_title))
 
 book_data <- book_data %>%
-  mutate(Title = gsub("III .*","", summarise_title2))
+  mutate(summarise_title3 = gsub("II ","II", summarise_title2))
 
+book_data <- book_data %>%
+  mutate(summarise_title4 = gsub("of Ernest Hemingway:"," ", summarise_title3))
+
+book_data <- book_data %>%
+  mutate(Title = gsub("   ","", summarise_title4))
+
+book_data <- book_data %>%
+  group_by(year, Title) %>%
+  summarise(checkouts = sum(checkouts))
 
 line_chart <- ggplot(data = book_data, aes(x = year, y = checkouts, color = Title)) +
   labs(title = "The Short Stories Checkouts by Year since 2012", x = "Year", y = "Amount of Checkouts") +
