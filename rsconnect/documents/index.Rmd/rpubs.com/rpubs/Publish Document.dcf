@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/1007610/2ce3c0c6ba9942b5806fd3b790c02df3
+bundleId: https://api.rpubs.com/api/v1/document/1007610/2ce3c0c6ba9942b5806fd3b790c02df3
+url: http://rpubs.com/bonche22/1007610
+when: 1677308858.35182
+lastSyncTime: 1677308858.35186

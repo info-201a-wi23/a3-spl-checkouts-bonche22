@@ -56,6 +56,8 @@ I choose to include this chart because I am interested in what material types ar
 
 Looking at the graph, 67.8% of people use the material type of ebook, 32.1% of people use audiobooks, and less than 0.1% of people use songs. This result is the same as what I expected, more people use ebooks than audiobooks.
 
+The x and y axes aren't presented because it is a pie charts with percentages. The independent variable (x) of the graph is the material type, and the dependent variable (y) is the total checkout percentage of each material type.
+
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 source("Chart3.R")
 pie_chart
